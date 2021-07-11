@@ -1,16 +1,22 @@
 <?php 
 include 'connect.php'; 
  //Если переменная Name передана
- if (isset($_POST['fio_employee'])) { 
- //Если это запрос на обновление, то обновляем
- if (isset($_GET['red_id'])) { 
- $sql_update = "UPDATE employee SET fio_employee = 
-'{$_POST['fio_employee']}', id_employee = '{$_POST['id_employee']}', date_of_birth = 
-'{$_POST['date_of_birth']}', phone_num = '{$_POST['phone_num']}', 
-id_post = '{$_POST['id_post']}', gender = '{$_POST['gender']}',experience = '{$_POST['experience']}' WHERE id_employee = 
-{$_GET['red_id']}"; 
- $result_update = mysqli_query($link, $sql_update); 
- } 
+ if (isset($_POST['fullname'])) { 
+    //Если это запрос на обновление, то обновляем
+    if (isset($_GET['red_id'])) { 
+    $sql_update = "UPDATE employee SET fullname = 
+   '{$_POST['fullname']}', id_employee = '{$_POST['id_employee']}', date_of_birthday = 
+   '{$_POST['date_of_birthday']}'
+   id_post = '{$_POST['id_post']}' WHERE id_employee = 
+   {$_GET['red_id']}"; 
+    $result_update = mysqli_query($link, $sql_update); 
+    } 
+    
+    if (isset($_GET['red_id'])) { 
+        $sql_select = "SELECT fullname, id_employee, date_of_birthday, id_post from employee WHERE id_employee = {$_GET['red_id']}"; 
+        $result_select = mysqli_query($link, $sql_select); 
+    $row = mysqli_fetch_array($result_select); 
+    } 
      
 //     
 //
