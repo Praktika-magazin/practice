@@ -56,38 +56,22 @@ include 'connect.php';
 <body>
     <form action="" method="post">
         <table>
-            <tr>
-                <td>ФИО сотрудника</td>
-                <td><input type="text" name="fio_employee" value="<?= 
-isset($_GET['red_id']) ? $row['fio_employee'] : ''; ?>"></td>
-            </tr>
-            <tr>
+        <tr>
                 <td>Код сотрудника</td>
                 <td><input type="text" name="id_employee" value="<?= 
 isset($_GET['red_id']) ? $row['id_employee'] : ''; ?>"></td>
             </tr>
             <tr>
+            <tr>
+                <td>ФИО сотрудника</td>
+                <td><input type="text" name="fullname" value="<?= 
+isset($_GET['red_id']) ? $row['fullname'] : ''; ?>"></td>
+            </tr>
+
                 <td>Дата рождения</td>
-                <td><input type="text" name="date_of_birth" value="<?= 
-isset($_GET['red_id']) ? $row['date_of_birth'] : ''; ?>"></td>
+                <td><input type="text" name="date_of_birthday" value="<?= 
+isset($_GET['red_id']) ? $row['date_of_birthday'] : ''; ?>"></td>
             </tr>
-            <tr>
-                <td>Tелефонный номер сотрудника</td>
-                <td><input type="text" name="phone_num" value="<?= 
-isset($_GET['red_id']) ? $row['phone_num'] : ''; ?>"></td>
-            </tr>
-            
-            <tr>
-                <td>Пол</td>
-                <td><input type="text" name="gender" value="<?= 
-isset($_GET['red_id']) ? $row['gender'] : ''; ?>"></td>
-            </tr>
-            <tr>
-                <td>Опыт работы</td>
-                <td><input type="text" name="experience" value="<?= 
-isset($_GET['red_id']) ? $row['experience'] : ''; ?>"></td>
-            </tr>
-            <tr>
                 <td>Должность сотрудника</td>
                 <td>
 
