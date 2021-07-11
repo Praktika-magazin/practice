@@ -2,18 +2,46 @@
 include 'connect.php'; 
  //Если переменная Name передана
  if (isset($_POST['fullname'])) { 
- //Если это запрос на обновление, то обновляем
- if (isset($_GET['red_id'])) { 
- $sql_update = "UPDATE employee SET fullname = 
-'{$_POST['fullname']}', id_employee = '{$_POST['id_employee']}', date_of_birthday = 
-'{$_POST['date_of_birthday']}'
-id_post = '{$_POST['id_post']}' WHERE id_employee = 
-{$_GET['red_id']}"; 
- $result_update = mysqli_query($link, $sql_update); 
+    //Если это запрос на обновление, то обновляем
+    if (isset($_GET['red_id'])) { 
+    $sql_update = "UPDATE employee SET fullname = 
+   '{$_POST['fullname']}', id_employee = '{$_POST['id_employee']}', date_of_birthday = 
+   '{$_POST['date_of_birthday']}'
+   id_post = '{$_POST['id_post']}' WHERE id_employee = 
+   {$_GET['red_id']}"; 
+    $result_update = mysqli_query($link, $sql_update); 
+    } 
+    
+    if (isset($_GET['red_id'])) { 
+        $sql_select = "SELECT fullname, id_employee, date_of_birthday, id_post from employee WHERE id_employee = {$_GET['red_id']}"; 
+        $result_select = mysqli_query($link, $sql_select); 
+    $row = mysqli_fetch_array($result_select); 
+    } 
+     
+//     
+//
+//     $inner = "SELECT employee.fio_employee, employee.id_employee, employee.date_of_birth, employee.phone_num, employee.id_post, employee.gender, employee.experience, post.id_post, post.post, post.zp, post.bonus FROM employee INNER JOIN post ON employee.id_post=post.id_post;";
+//$result_inner = mysqli_query ($link, $inner);
+//                        if ($result_inner) { 
+// echo '<p>Успешно!</p>';
+// } else { 
+// echo '<p>Произошла ошибка: ' . mysqli_error($link) 
+//. '</p>'; 
+// }
+//   $row_inner = mysqli_fetch_array($result_inner);
+//     
+//     
+//     
+// if ($result_update) { 
+// echo '<p>Успешно!</p>';
+// } else { 
+// echo '<p>Произошла ошибка: ' . mysqli_error($link) 
+//. '</p>'; 
+// } 
  } 
  
  if (isset($_GET['red_id'])) { 
-     $sql_select = "SELECT fullname, id_employee, date_of_birthday, id_post from employee WHERE id_employee = {$_GET['red_id']}"; 
+    $sql_select = "SELECT fullname, id_employee, date_of_birthday, id_post from employee WHERE id_employee = {$_GET['red_id']}"; 
      $result_select = mysqli_query($link, $sql_select); 
  $row = mysqli_fetch_array($result_select); 
  } 
@@ -44,7 +72,6 @@ isset($_GET['red_id']) ? $row['fullname'] : ''; ?>"></td>
                 <td><input type="text" name="date_of_birthday" value="<?= 
 isset($_GET['red_id']) ? $row['date_of_birthday'] : ''; ?>"></td>
             </tr>
-
                 <td>Должность сотрудника</td>
                 <td>
 
@@ -99,4 +126,5 @@ echo
         <input type="submit" value="Вернуться назад">
     </form>
 </body>
+
 </html>
