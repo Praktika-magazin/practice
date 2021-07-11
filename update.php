@@ -41,7 +41,7 @@ include 'connect.php';
  } 
  
  if (isset($_GET['red_id'])) { 
-     $sql_select = "SELECT fio_employee, id_employee, date_of_birth, phone_num, id_post, gender, experience from employee WHERE id_employee = {$_GET['red_id']}"; 
+    $sql_select = "SELECT fullname, id_employee, date_of_birthday, id_post from employee WHERE id_employee = {$_GET['red_id']}"; 
      $result_select = mysqli_query($link, $sql_select); 
  $row = mysqli_fetch_array($result_select); 
  } 
