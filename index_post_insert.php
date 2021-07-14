@@ -13,8 +13,8 @@
                 <td> <input type="text" name="post"> </td>
             </tr>
             <tr>
-                <td> Bведите заработную плату</td>
-                <td> <select name="zp">
+            <td> Bведите заработную плату</td>
+                <td> <input type="text" name="zp">
                     
                     </td>
             </tr>
