@@ -64,7 +64,7 @@ $sorting_sql = '';
 $poisk = $_POST['poisk'];
 $reser = $_POST['reset']; if (empty($poisk))
 {
-$sql = "SELECT SELECT * FROM post $sorting_sql";
+$sql = "SELECT * FROM post $sorting_sql";
 $result_sql = mysqli_query($link, $sql);
 	echo '<table border=1>'.
 	'<tr>'.
