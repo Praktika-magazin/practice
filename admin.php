@@ -19,18 +19,16 @@ content='0; URL=index.php'></head></html>");
     <form action="index_employee_admin.php" method="post">
         <input type="submit" name="connect" value="сотрудники">
     </form>
-    <form action="index_receipt_admin.php" method="post">
-        <input type="submit" name="connect" value="чек">
+    <form action="index_post_admin.php" method="post">
+        <input type="submit" name="connect" value="должность">
     </form>
-    <form action="index_client_admin.php" method="post">
-        <input type="submit" name="connect" value="клиент">
+    <form action="index_department_admin.php" method="post">
+        <input type="submit" name="connect" value="отдел">
     </form>
-    <form action="index_booking_admin.php" method="post">
-        <input type="submit" name="connect" value="запись">
+    <form action="index_contract_admin.php" method="post">
+        <input type="submit" name="connect" value="Договор">
     </form>
-    <form action="index_service_admin.php" method="post">
-        <input type="submit" name="connect" value="услуга">
-    </form>
+    
     <form method="post">
         <input type="submit" value="Выйти" name="exit">
     </form>
