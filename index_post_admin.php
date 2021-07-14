@@ -81,30 +81,27 @@ $result_sql = mysqli_query($link, $sql);
             "<td> {$row['zp']}</td>".
 
             "<td><a href='?del_id={$row['id_post']}'>Удалить</a> </td>".
-				"<td><a href='update_patients.php?red_id={$row['id_post']}'>Изменить</a></td>".
+				"<td><a href='update_post.php?red_id={$row['id_post']}'>Изменить</a></td>".
 		'</tr>';
 	}
 	echo '</table>';
 } else {
-	$sqllike = "SELECT * FROM patients WHERE Id_patient LIKE '%$poisk%' OR fullName
-LIKE '%$poisk%' OR Date_of_Birthe LIKE '%$poisk%' OR Phone LIKE '%$poisk%' OR Address LIKE '%$poisk%' $sorting_sql";
+	$sqllike = "SELECT * FROM post WHERE id_post LIKE '%$poisk%' OR post
+LIKE '%$poisk%' OR zp LIKE '%$poisk%' $sorting_sql";
 	$res = mysqli_query($link, $sqllike); echo '<table border=1>'.
 	'<tr>'.
 	'<td>ID</td>'.
-'<td>ФИО</td>'.
-'<td>Дата рождения</td>'.
-'<td>Телефон</td>'.
-'<td>Адрес</td>'.
+'<td>Должность</td>'.
+'<td>Заработная плата</td>'.
+
 	'</tr>';
 	while ($row1 = mysqli_fetch_array($res)) {
 		echo '<tr>' .
-		"<td> {$row1['Id_patient']} </td>" .
-"<td> {$row1['fullName']}</td>".
-"<td> {$row1['Date_of_Birthe']}</td>".
-"<td> {$row1['Phone']}</td>".
-"<td> {$row1['Address']}</td>".
-            "<td><a href='?del_id={$row['Id_patient']}'>Удалить</a> </td>".
-				"<td><a href='update_post.php?red_id={$row['Id_patient']}'>Изменить</a></td>".
+		"<td> {$row1['id_post']} </td>" .
+"<td> {$row1['post']}</td>".
+
+            "<td><a href='?del_id={$row['id_post']}'>Удалить</a> </td>".
+				"<td><a href='update_post.php?red_id={$row['id_post']}'>Изменить</a></td>".
 		'</tr>';
 	}
 	echo '</table>';
