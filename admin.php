@@ -29,9 +29,7 @@ content='0; URL=index.php'></head></html>");
         <input type="submit" name="connect" value="Договор">
     </form>
     
-    <form method="post">
-        <input type="submit" value="Выйти" name="exit">
-    </form>
+   
 </body>
 
 </html>
