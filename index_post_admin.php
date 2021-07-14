@@ -37,7 +37,7 @@
 <li><a href="index_post_admin.php?sort=default"> ФИО по умолчанию
 </a></li>
 </ul>
-	<form action="index_patients_insert.php" method="post">
+	<form action="index_post_insert.php" method="post">
 		<input type="submit" name="connect" value="Добавить">
     </form>
     <form action="header_tab.php" method="post">
@@ -104,7 +104,7 @@ LIKE '%$poisk%' OR Date_of_Birthe LIKE '%$poisk%' OR Phone LIKE '%$poisk%' OR Ad
 "<td> {$row1['Phone']}</td>".
 "<td> {$row1['Address']}</td>".
             "<td><a href='?del_id={$row['Id_patient']}'>Удалить</a> </td>".
-				"<td><a href='update_patients.php?red_id={$row['Id_patient']}'>Изменить</a></td>".//////////////////////
+				"<td><a href='update_post.php?red_id={$row['Id_patient']}'>Изменить</a></td>".
 		'</tr>';
 	}
 	echo '</table>';
