@@ -54,6 +54,13 @@ echo
 
 </html>
 
+<?php 
+ include 'connect.php'; 
+ if (isset($_GET['del_id'])){$sql_delete = "DELETE FROM employee WHERE id_employee = {$_GET['del_id']}"; 
+ $result_delete = mysqli_query ($link, $sql_delete);  
+ } 
+ ?>
+
 <!DOCTYPE html>
 <html>
 
