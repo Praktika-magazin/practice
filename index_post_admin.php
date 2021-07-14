@@ -30,11 +30,11 @@
 		</table>
 	</form>
 	 <ul>
-	<li> <a href="index_post_admin.php?sort=fullName-asc"> ФИО от А до Я
+     <li> <a href="index_post_admin.php?sort=post-asc"> Должности от А до Я
 </a></li>
-<li><a href="index_post_admin.php?sort=fullName-desc"> ФИО от Я до А
+<li><a href="index_post_admin.php?sort=post-desc"> Должности от Я до А
 </a></li>
-<li><a href="index_post_admin.php?sort=default"> ФИО по умолчанию
+<li><a href="index_post_admin.php?sort=default"> Должности по умолчанию
 </a></li>
 </ul>
 	<form action="index_post_insert.php" method="post">
