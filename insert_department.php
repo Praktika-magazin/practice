@@ -1,12 +1,12 @@
 <?php
 include 'connect.php';
 $name=htmlentities(trim($_POST['name']));
-$Id_employee=array();
-$Id_employee=htmlentities(trim($_POST['id_employee']));
+$id_employee=array();
+$id_employee=htmlentities(trim($_POST['id_employee']));
 
 if (isset($name) && isset($id_employee))
 {
-    $sql="INSERT INTO department (name, Id_employee) VALUES ('$name', '$id_employee')";
+    $sql="INSERT INTO department (name, id_employee) VALUES ('$name', '$id_employee')";
     $result=mysqli_query($link, $sql);
     if ($result){
         echo "Данные успешно добавлены";

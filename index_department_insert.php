@@ -10,7 +10,7 @@
 		<table>
 			<tr>
 				<td> Введите название отдела </td>
-                <td> <input type="text" name="name
+                <td> <input type="text" name="name"
             <tr>
                 <td> Bведите сотрудника, выполняющего процедуру</td>
                 <td> <select name="id_employee">
