@@ -26,7 +26,7 @@ content='0; URL=index.php'></head></html>");
         <input type="submit" name="connect" value="отдел">
     </form>
     <form action="index_contract_admin.php" method="post">
-        <input type="submit" name="connect" value="Договор">
+        <input type="submit" name="connect" value="договор">
     </form>
     
    
