@@ -34,10 +34,7 @@
                     </select> </td>
             </tr>
           
-            <tr>
-                <td> Укажите дату рождения сотрудника </td>
-                <td> <input type="date" name="date_of_birthday"></td>
-            </tr>
+            
             <tr>
 
                 <td> Введите должность сотрудника </td>
@@ -80,7 +77,18 @@ echo
     </select>
 </td>
 </tr>
+<tr>
+                <td> Укажите дату принятия договора </td>
+                <td> <input type="date" name="date_of_issue"></td>
+            </tr>
             <tr>
+                <td> Введите образование </td>
+                <td> <input type="text" name="education"></td>
+            </tr>
+            <tr>
+                <td> Введите размер премии </td>
+                <td> <input type="text" name="premium"></td>
+            </tr>
                 <td><input type="submit" value="Добавить данные">
                     <input type="reset" value="Очистить форму">
                 </td>
