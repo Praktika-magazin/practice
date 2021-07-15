@@ -4,7 +4,7 @@ $name=htmlentities(trim($_POST['name']));
 $Id_employee=array();
 $Id_employee=htmlentities(trim($_POST['id_employee']));
 
-if (isset($name) && isset($Id_employee))
+if (isset($name) && isset($id_employee))
 {
     $sql="INSERT INTO department (name, Id_employee) VALUES ('$name', '$id_employee')";
     $result=mysqli_query($link, $sql);
