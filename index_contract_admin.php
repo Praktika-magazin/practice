@@ -15,22 +15,22 @@
                 <td> <input type="text" name="id_contract"></td>
             </tr>
             <tr>
-                <td> Введите ФИО Сотрудника </td>
+                <td> Выберете ФИО Сотрудника </td>
                 <td> <select name="id_employee">
                         <?php
-//подключаемся к базе данных
-include 'connect.php';
-//выполняем запрос, для получения данных из таблицы post
-$sql_select = "SELECT id_employee, fullname FROM employee";
-$result_select = mysqli_query($link, $sql_select);
-//циклом формируем значения, которые были получены в результате выполнения запроса
-while ($row = mysqli_fetch_array($result_select))
-{
-//выводим данные из запроса в поле select
-echo
- "<option value = ' ".$row['id_post']." '>".$row['post']."</option>";
-}
-?>
+                //подключаемся к базе данных
+                include 'connect.php';
+                //выполняем запрос, для получения данных из таблицы post
+                $sql_select = "SELECT id_employee, fullname FROM employee";
+                $result_select = mysqli_query($link, $sql_select);
+                //циклом формируем значения, которые были получены в результате выполнения запроса
+                while ($row = mysqli_fetch_array($result_select))
+                {
+                //выводим данные из запроса в поле select
+                echo
+                "<option value = ' ".$row['id_employee']." '>".$row['fullname']."</option>";
+                }
+                ?>
                     </select> </td>
             </tr>
           
@@ -59,6 +59,27 @@ echo
                     </select>
                 </td>
             </tr>
+            <tr>
+
+<td> Выберете отдел сотрудника </td>
+<td> <select name="id_department">
+        <?php
+//подключаемся к базе данных
+include 'connect.php';
+//выполняем запрос, для получения данных из таблицы post
+$sql_select = "SELECT id_department, name FROM department";
+$result_select = mysqli_query($link, $sql_select);
+//циклом формируем значения, которые были получены в результате выполнения запроса
+while ($row = mysqli_fetch_array($result_select))
+{
+//выводим данные из запроса в поле select
+echo
+"<option value = ' ".$row['id_department']." '>".$row['name']."</option>";
+}
+?>
+    </select>
+</td>
+</tr>
             <tr>
                 <td><input type="submit" value="Добавить данные">
                     <input type="reset" value="Очистить форму">
