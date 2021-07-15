@@ -139,8 +139,8 @@
         "<td> {$row_state['date_of_issue']}</td>".
         "<td> {$row_state['education']}</td>".
         "<td> {$row_state['premium']}</td>".
-        "<td><a href='?del_id={$row_state['id_employee']}'>Удалить</a></td>".
-        "<td><a href='update_cont.php?red_id={$row_state['id_employee']}'>Изменить</a></td>".
+        "<td><a href='?del_id={$row_state['id_contract']}'>Удалить</a></td>".
+        "<td><a href='update_cont.php?red_id={$row_state['id_contract']}'>Изменить</a></td>".
         '</tr>'; 
         } 
         ?>
