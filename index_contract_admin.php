@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <h1> Добавление данных в таблицу employee </h1>
+    <h1> Добавление данных в таблицу contract </h1>
     <form action="insert_contract.php" method="post" name="action">
         <table>
         <tr>
@@ -115,29 +115,32 @@
 </head>
 
 <body>
-    <h2> Таблица "Сотрудники" </h2>
+    <h2> Таблица "Договор" </h2>
     <table border=1>
         <tr>
-            <td> Код сотрудника </td>
-            <td> ФИО сотрудника </td>
-            
-            <td> Дата рождения сотрудника </td>
+            <td> Номер договора </td>
+            <td> Сотрудник </td>
             <td> Должность </td>
-
+            <td> Отдел </td>
+            <td> Дата договора </td>
+            <td> Образование </td>
+            <td> Премия </td>
         </tr>
         <?php 
-     $sql_state = "SELECT employee.fullname, employee.id_employee, employee.date_of_birthday, employee.id_post, post.id_post, post.post, post.zp FROM employee INNER JOIN post ON employee.id_post=post.id_post;";
+     $sql_state = "SELECT contract.id_contract, employee.fullname, post.post, department.name, contract.date_of_issue, contract.education, contract.premium FROM contract INNER JOIN post ON contract.id_post=post.id_post 
+     INNER JOIN employee ON contract.id_employee = employee.id_employee INNER JOIN department ON contract.id_department =employee.id_post ";
 $result_state = mysqli_query($link, $sql_state);
-while ($row_state = 
-mysqli_fetch_array($result_state)) { 
+while ($row_state = mysqli_fetch_array($result_state)) { 
  echo '<tr>' .
- "<td> {$row_state['id_employee']}</td>".
+ "<td> {$row_state['id_contract']}</td>".
 "<td> {$row_state['fullname']} </td>" .
-
-"<td> {$row_state['date_of_birthday']}</td>".
 "<td> {$row_state['post']}</td>".
+"<td> {$row_state['name']}</td>".
+"<td> {$row_state['date_of_issue']}</td>".
+"<td> {$row_state['education']}</td>".
+"<td> {$row_state['premium']}</td>".
 "<td><a href='?del_id={$row_state['id_employee']}'>Удалить</a></td>".
-"<td><a href='update.php?red_id={$row_state['id_employee']}'>Изменить</a></td>".
+"<td><a href='update_cont.php?red_id={$row_state['id_employee']}'>Изменить</a></td>".
 '</tr>'; 
  } 
  ?>
