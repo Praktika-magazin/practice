@@ -40,44 +40,44 @@
                 <td> Введите должность сотрудника </td>
                 <td> <select name="id_post">
                         <?php
-//подключаемся к базе данных
-include 'connect.php';
-//выполняем запрос, для получения данных из таблицы post
-$sql_select = "SELECT id_post, post FROM post";
-$result_select = mysqli_query($link, $sql_select);
-//циклом формируем значения, которые были получены в результате выполнения запроса
-while ($row = mysqli_fetch_array($result_select))
-{
-//выводим данные из запроса в поле select
-echo
- "<option value = ' ".$row['id_post']." '>".$row['post']."</option>";
-}
-?>
+            //подключаемся к базе данных
+            include 'connect.php';
+            //выполняем запрос, для получения данных из таблицы post
+            $sql_select = "SELECT id_post, post FROM post";
+            $result_select = mysqli_query($link, $sql_select);
+            //циклом формируем значения, которые были получены в результате выполнения запроса
+            while ($row = mysqli_fetch_array($result_select))
+            {
+            //выводим данные из запроса в поле select
+            echo
+            "<option value = ' ".$row['id_post']." '>".$row['post']."</option>";
+            }
+            ?>
                     </select>
                 </td>
             </tr>
             <tr>
 
-<td> Выберете отдел сотрудника </td>
-<td> <select name="id_department">
-        <?php
-//подключаемся к базе данных
-include 'connect.php';
-//выполняем запрос, для получения данных из таблицы post
-$sql_select = "SELECT id_department, name FROM department";
-$result_select = mysqli_query($link, $sql_select);
-//циклом формируем значения, которые были получены в результате выполнения запроса
-while ($row = mysqli_fetch_array($result_select))
-{
-//выводим данные из запроса в поле select
-echo
-"<option value = ' ".$row['id_department']." '>".$row['name']."</option>";
-}
-?>
-    </select>
-</td>
-</tr>
-<tr>
+            <td> Выберете отдел сотрудника </td>
+            <td> <select name="id_department">
+                    <?php
+            //подключаемся к базе данных
+            include 'connect.php';
+            //выполняем запрос, для получения данных из таблицы post
+            $sql_select = "SELECT id_department, name FROM department";
+            $result_select = mysqli_query($link, $sql_select);
+            //циклом формируем значения, которые были получены в результате выполнения запроса
+            while ($row = mysqli_fetch_array($result_select))
+            {
+            //выводим данные из запроса в поле select
+            echo
+            "<option value = ' ".$row['id_department']." '>".$row['name']."</option>";
+            }
+            ?>
+                </select>
+            </td>
+            </tr>
+            <tr>
                 <td> Укажите дату принятия договора </td>
                 <td> <input type="date" name="date_of_issue"></td>
             </tr>
@@ -89,6 +89,7 @@ echo
                 <td> Введите размер премии </td>
                 <td> <input type="text" name="premium"></td>
             </tr>
+            <tr>
                 <td><input type="submit" value="Добавить данные">
                     <input type="reset" value="Очистить форму">
                 </td>
