@@ -31,9 +31,9 @@
 		</table>
 	</form>
     <ul>
-        <li> <a href="index_department_admin.php?sort=services-asc"> Название отдела от А до Я
+        <li> <a href="index_department_admin.php?sort=name-asc"> Название отдела от А до Я
 </a></li>
-<li><a href="index_department_admin.php?sort=services-desc"> Название отдела от Я до А
+<li><a href="index_department_admin.php?sort=name-desc"> Название отдела от Я до А
 </a></li>
 <li><a href="index_department_admin.php?sort=default"> Название отдела по умолчанию
 </a></li>
@@ -76,7 +76,7 @@ $result_sql = mysqli_query($link, $sql);
 	echo '<table border=1>'.
 	'<tr>'.
 	'<td>ID</td>'.
-'<td>Услуга</td>'.
+
         '<td>Отдел</td>'.
 '<td>ФИО сотрудника</td>'.
         
