@@ -1,6 +1,6 @@
 <?php
 	include 'connect.php';
-	if (isset($_POST['department'])) {
+	if (isset($_POST['name'])) {
 
 if (isset($_GET['red_id'])) {
 $sql_update = "UPDATE department SET name =
@@ -14,7 +14,7 @@ echo '<p>Произошла ошибка: ' . mysqli_error($link) . '</p>';
 }
 }
 if (isset($_GET['red_id'])) {
-$sql_select = "SELECT * FROM department WHERE id_department = {$_GET['red_id']}";
+$sql_select = "SELECT id_department, name, id_employee FROM department WHERE id_department = {$_GET['red_id']}";
 $result_select = mysqli_query($link, $sql_select);
 $row = mysqli_fetch_array($result_select);
 }
