@@ -5,11 +5,8 @@ include 'connect.php';
 //поле input или select
 //htmlentities используетсядляпредотвращениявнедрениявредоносныхскриптов. Trim удаляет пробелы перед и после значения переменной
 $id_contract = htmlentities(trim($_POST['id_contract']));
-$id_employee = array();
 $id_employee = htmlentities(trim($_POST['id_employee']));
-$id_post = array();
 $id_post = htmlentities(trim($_POST['id_post']));
-$id_department = array();
 $id_department = htmlentities(trim($_POST['id_department']));
 $date_of_issue = htmlentities(trim($_POST['date_of_issue']));
 $id_contract = htmlentities(trim($_POST['education']));
