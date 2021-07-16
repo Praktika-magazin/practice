@@ -102,7 +102,7 @@
 
 <?php 
  include 'connect.php'; 
- if (isset($_GET['del_id'])){$sql_delete = "DELETE FROM employee WHERE id_employee = {$_GET['del_id']}"; 
+ if (isset($_GET['del_id'])){$sql_delete = "DELETE FROM contract WHERE id_contract = {$_GET['del_id']}"; 
  $result_delete = mysqli_query ($link, $sql_delete);  
  } 
  ?>
