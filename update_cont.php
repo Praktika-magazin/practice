@@ -32,19 +32,49 @@ include 'connect.php';
                 <td><input type="text" name="id_contract" value="<?= 
 isset($_GET['red_id']) ? $row['id_contract'] : ''; ?>"></td>
             </tr>
+            
             <tr>
-                <td>ФИО сотрудника</td>
-                <td><input type="text" name="fullname" value="<?= 
-isset($_GET['red_id']) ? $row['fullname'] : ''; ?>"></td>
+                <td> Укажите дату принятия договора </td>
+                <td> <input type="date" name="date_of_issue"value="<?= 
+isset($_GET['red_id']) ? $row['date_of_issue'] : ''; ?>"></td>
+            </tr>
+            <tr>
+                <td> Введите образование </td>
+                <td> <input type="text" name="education" value="<?= 
+isset($_GET['red_id']) ? $row['education'] : ''; ?>"></td>
+            </tr>
+            <tr>
+                <td> Введите размер премии </td>
+                <td> <input type="text" name="premium" value="<?= 
+isset($_GET['red_id']) ? $row['premium'] : ''; ?>"></td>
             </tr>
 
             <tr>
-                <td>Дата рождения</td>
-                <td><input type="text" name="date_of_birthday" value="<?= 
-isset($_GET['red_id']) ? $row['date_of_birthday'] : ''; ?>"></td>
+                <td>ФИО сотрудника</td>
+                <td>
+                    <select name="id_employee">
+                        <?php
+
+//выполняем запрос, для получения данных из таблицы post
+$sql_select = "SELECT id_employee, fullname FROM employee";
+$result_select = mysqli_query($link, $sql_select);
+//циклом формируем значения, которые были получены в результате выполнения запроса
+echo    "<option value = ' ".$row['id_employee']." '>".$row['id_employee']."</option>";
+
+while ($row = mysqli_fetch_array($result_select))
+{
+//выводим данные из запроса в поле select
+echo
+   
+    "<option value = ' ".$row['id_employee']." '>".$row['fullname']."</option>";
+}
+?>
+                    </select>
+                </td>
             </tr>
+
             <tr>
-                <td>Должность сотрудника</td>
+                <td>Выберете должность</td>
                 <td>
                     <select name="id_post">
                         <?php
@@ -67,6 +97,30 @@ echo
                 </td>
             </tr>
 
+            <tr>
+                <td>Выберете отдел сотрудника</td>
+                <td>
+                    <select name="id_department">
+                        <?php
+
+                //выполняем запрос, для получения данных из таблицы post
+                $sql_select = "SELECT id_department, name FROM department";
+                $result_select = mysqli_query($link, $sql_select);
+                //циклом формируем значения, которые были получены в результате выполнения запроса
+                echo    "<option value = ' ".$row['id_department']." '>".$row['id_department']."</option>";
+
+                while ($row = mysqli_fetch_array($result_select))
+                {
+                //выводим данные из запроса в поле select
+                echo
+                
+                    "<option value = ' ".$row['id_department']." '>".$row['name']."</option>";
+                }
+                ?>
+                    </select>
+                </td>
+            </tr>
+            
             <tr>
                 <td colspan="2"><input type="submit" value="Сохранить"></td>
             </tr>
