@@ -145,7 +145,7 @@
         } 
         ?>
     </table>
-    <form action="header02.php" method="post">
+    <form action="header_tab.php" method="post">
         <input type="submit" value="Вернуться назад">
     </form>
 </body>
