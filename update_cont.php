@@ -126,7 +126,7 @@ echo
             </tr>
         </table>
     </form>
-    <form action="header.php" method="post">
+    <form action="header_contr.php" method="post">
         <input type="submit" value="Вернуться назад">
     </form>
 </body>
