@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Добавление в таблицу данных contract</title>
+    <title> Таблица contract</title>
 </head>
 
 <body>
@@ -33,11 +33,8 @@
                 ?>
                     </select> </td>
             </tr>
-          
-            
             <tr>
-
-                <td> Введите должность сотрудника </td>
+                <td> Выберете должность сотрудника </td>
                 <td> <select name="id_post">
                         <?php
             //подключаемся к базе данных
