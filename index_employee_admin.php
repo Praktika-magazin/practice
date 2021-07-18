@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Добавление в таблицу данных employee</title>
+    <title> Таблица employee</title>
 </head>
 
 <body>
