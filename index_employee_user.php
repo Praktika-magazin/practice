@@ -1,8 +1,10 @@
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title> Просмотр </title>
+    <title> редактирование </title>
 </head>
 
 <body>
@@ -11,12 +13,16 @@
         <tr>
             <td> Код сотрудника </td>
             <td> ФИО сотрудника </td>
+            
             <td> Дата рождения сотрудника </td>
             <td> Должность </td>
 
         </tr>
+        
         <?php 
-     $sql_state = "SELECT employee.fullname, employee.id_employee, employee.date_of_birthday, employee.id_post, post.id_post, post.post, post.zp FROM employee INNER JOIN post ON employee.id_post=post.id_post;";
+        //подключаемся к базе данных
+include 'connect.php';
+     $sql_state = "SELECT employee.fullname, employee.id_employee, employee.date_of_birthday,  post.post FROM employee INNER JOIN post ON employee.id_post=post.id_post;";
 $result_state = mysqli_query($link, $sql_state);
 while ($row_state = 
 mysqli_fetch_array($result_state)) { 
